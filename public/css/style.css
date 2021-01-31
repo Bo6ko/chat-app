@@ -1,0 +1,80 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+.error {
+    color: red;
+}
+.success-register {
+    color: #1a91b8;
+}
+.logout {
+    margin-left: 50px;
+    display: inline-block;
+}
+.content {
+    width: 1240px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+.nav {
+    margin-bottom: 30px;
+    background: #efeded;
+    padding: 15px 0;
+}
+.nav a {
+    padding: 15px 30px;
+    text-decoration:none;
+    color: #333;
+    font-weight: bold;
+}
+.nav a:hover {
+    background: #b9b9b9;
+}
+table {
+    width:100%;
+}
+
+table, th, td {
+	border: 1px solid black;
+	border-collapse: collapse;
+}
+
+th, td {
+	padding: 5px;
+	text-align: left;
+}
+
+table tr:nth-child(even) {
+    background-color: #eee;
+}
+
+table tr:nth-child(odd) {
+    background-color: #fff;
+}
+
+table th {
+	background-color: black;
+	color: white;
+}
+
+table .text-center {
+	text-align: center;
+}
+.send_message {
+    margin-top: 20px;
+    padding: 10px 30px;
+    border: 1px solid #333;
+    border-radius: 30px;
+    background: lightblue;
+    display: inline-block;
+    cursor: pointer;
+}
+.clear {
+    clear: both;
+}
+.message-box .message {
+    border: 1px solid lightblue;
+    border-radius: 5px;
+    padding: 5px 10px;
+    margin-bottom: 20px;
+}
