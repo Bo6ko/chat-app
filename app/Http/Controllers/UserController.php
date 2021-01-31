@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use App\Models\User;
+use App\Models\Messages;
 
 class UserController extends Controller
 {
@@ -57,9 +58,12 @@ class UserController extends Controller
 
         if ( empty($err) ) {
             $request->session()->put('user_email', $user_email);
+            $messageObj = new Messages();
+            $messages = $messageObj->getAll();
             return view('index',
             [
-                'data' => $request->post()
+                'data' => $request->post(),
+                'messages' => $messages
             ]);
         }
         return view('user.login',
