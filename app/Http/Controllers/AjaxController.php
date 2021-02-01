@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Models\User;
+use App\Models\Messages;
 
 class AjaxController extends Controller
 {
@@ -33,6 +34,23 @@ class AjaxController extends Controller
             ['success'      => true, 
             'message_text'  => $message_text,
             'message_date'  => $message_date,
+            'user'          => $user
+            ]);
+
+    }
+
+    public function getAllMessage(Request $request)
+    {        
+        // $data = $request->all();
+        // $message_text = $data['message_text'];
+        $user = User::getByEmail( $request->session()->get('user_email') );
+        $messageObj = new Messages();
+        $messages = $messageObj->getAll();
+        $data["user_email"] = $request->session()->get('user_email');
+
+        return response()->json(
+            ['success'      => true, 
+            'messages'      => $messages,
             'user'          => $user
             ]);
 

@@ -31,3 +31,4 @@ Route::post('/register', [UserController::class, 'register_post']);
 // Route::get('/', [MessageController::class, 'index']);
 
 Route::post('createMessage', [AjaxController::class, 'createMessage'])->name('createMessage.post');
+Route::post('getAllMessage', [AjaxController::class, 'getAllMessage'])->name('getAllMessage.post');
